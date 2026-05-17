@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  // ====== Cấu hình NekoVCheat ======
+  // ====== Cấu hình TVKCheat ======
   // Đổi nếu bạn host ở subpath khác. Đường dẫn này phải khớp với
   // vị trí các file api.php và link.json trên hosting.
   const API_BASE = 'http://localhost/bypass';
@@ -290,7 +290,7 @@
     });
   }
   function layCacheRedirect(khoaCache) {
-    ghiLog('Đang kết nối với cơ sở dữ liệu nekovcheat.io...', 'system');
+    ghiLog('Đang kết nối với cơ sở dữ liệu Localhost...', 'system');
     GM_xmlhttpRequest({
       method: 'GET',
       url: `${CONFIG_URL}?t=${new Date().getTime()}`,
@@ -312,7 +312,7 @@
         }
       },
       onerror: function () {
-        ghiLog('Lỗi kết nối nekovcheat.io. Kích hoạt nhận diện AI...', 'error');
+        ghiLog('Lỗi kết nối Localhost. Kích hoạt nhận diện AI...', 'error');
         batDauPipelineOCR();
       },
     });
@@ -504,7 +504,7 @@
     });
   }
   function dongBoLenServer(khoaDongBo, tenMienDongBo) {
-    ghiLog('Đang đồng bộ hóa dữ liệu lên nekovcheat.io...', 'system');
+    ghiLog('Đang đồng bộ hóa dữ liệu lên Localhost...', 'system');
     GM_xmlhttpRequest({
       method: 'POST',
       url: SAVE_URL,
@@ -523,7 +523,7 @@
         }
       },
       onerror: function () {
-        ghiLog('Không gọi được api.php trên nekovcheat.io.', 'error');
+        ghiLog('Không gọi được api.php trên Localhost.', 'error');
       },
     });
   }
